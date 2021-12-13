@@ -14,6 +14,14 @@ def GAVT():                                             #GAVT means Get and Veri
             x = False
             return(word)
         print("that is not a type try again")
+def GAVN():                                             #GAVN means Get and Verify number
+    x = True
+    while x == True:
+        word = int(input())
+        if word == 1 or word == 2:
+            x = False
+            return(word)
+        print("that is not a number try again")
 def attack(health,attack,armor):
         health = health - (attack - armor) 
         return (health)
@@ -30,7 +38,7 @@ def encounter(roomnumber,enemyhealth,playerhealth,enemyattack,playerattack,enemy
     print("you have encounterd a ",enemyname)
     while enemyhealth > 0 and playerhealth > 0:
         print("If you would like to attack press 1,If you would like to see your items press 2")
-        flag = int(input())
+        flag = GAVN()
         if (flag == 1):
             enemyhealth = attack(enemyhealth,playerattack,enemyaromor)
             playerhealth = attack(playerhealth,enemyattack,playerarmor)

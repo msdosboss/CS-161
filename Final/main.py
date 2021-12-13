@@ -1,6 +1,6 @@
 import classes
 import functions
-room1 = classes.room(classes.enemy(10,"G","potion","placeholdername",5),"firerod")
+room1 = classes.room(classes.enemy(10,"G","potion","Undead",5),"firerod")
 room2 = classes.room(classes.enemy(15,"G","potion","Orc",5),"waterrod")
 room3 = classes.room(classes.enemy(15,"G","grassrod","troll",5),"grassrod")
 room4 = classes.room(classes.enemy(15,"G","potion","Goblin",5),"victorytoken")
@@ -34,6 +34,8 @@ def main():
                 playerroom = playerroom + 1
         if (playerroom == 4):
             print("welcome to room 4")
+            print("you have had one of your items stolen")
+            del player.inv[1]
             player.health = functions.encounter(playerroom,room4.enemy.health,player.health,room4.enemy.attack,player.attack,room4.enemy.armor,player.armor,room4.enemy.name,player.inv,room4.enemy.item)
             player.inv.append(room4.loot)
             if (player.health > 0):
